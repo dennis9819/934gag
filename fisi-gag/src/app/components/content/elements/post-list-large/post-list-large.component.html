@@ -1,0 +1,9 @@
+<div>
+    <div class="item" *ngFor="let item of postList">
+        <app-post-list-item-large class="item"  [data]="item">
+        </app-post-list-item-large>
+    </div>
+    <div class="item" [hidden]="postList.length > 0">
+        No posts found :/
+    </div>
+</div>

@@ -1,0 +1,40 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/fisi-gag/dist
+/fisi-gag/tmp
+/fisi-gag/out-tsc
+
+/ts-backend/dist
+/ts-backend/log
+
+# dependencies
+/fisi-gag/node_modules
+/ts-backend/node_modules
+node_modules
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/fisi-gag/.sass-cache
+/fisi-gag/connect.lock
+/fisi-gag/coverage
+/fisi-gag/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/fisi-gag/typings
+
+# System Files
+.DS_Store
+Thumbs.db

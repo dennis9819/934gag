@@ -1,0 +1,38 @@
+@import '../../../app.component.scss';
+
+.navbar-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $smoky-black;
+}
+
+.navbar-logo{
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    font-size: 2rem;
+    font-family: Poppins;
+    font-weight: bold;
+}
+
+.navbar-logo>a {
+    color: #fff;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
+
+.navbar-buttons {
+    flex-grow: 1;
+}
+
+.navbar-user-section {
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    text-align: right;
+}

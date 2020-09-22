@@ -1,0 +1,64 @@
+
+$smoky-black: #181313ff;
+$raisin-black: #251f1fff;
+$eerie-black: #1f1c1cff;
+$falu-red: #882222ff;
+$old-burgundy: #4a3333ff;
+
+$shadow-text: #888;
+
+$text-main: #fff;
+
+$button-color: rgb(100,100,100);
+$button-color-border: rgb(60,60,60);
+$button-color-text: #fff;
+
+//basis styles
+.fisi-button {
+    border: $button-color-border;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    margin: 0.25rem;
+    font-family: Poppins;
+    font-weight: bold;
+    color: $button-color-text;
+    background-color: $button-color;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.fisi-button:hover {
+    background-color: rgba($button-color,0.5);
+}
+
+.fisi-button-none {
+    border: none;
+    background-color: transparent;
+}
+
+.fisi-button-none:hover {
+    background-color: transparent;
+}
+
+.fisi-button-red {
+    background-color: $falu-red;
+}
+
+.fisi-button-red:hover {
+    background-color: rgba($falu-red,0.5);
+}
+
+.fisi-button-outline {
+    background-color: transparent;
+    border: 1px solid $shadow-text;
+}
+
+.item-link {
+    cursor: pointer;
+    color: $shadow-text;
+    transition: 200ms;
+}
+
+.item-link:hover {
+    color: $falu-red !important;
+}

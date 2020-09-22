@@ -1,0 +1,42 @@
+@import '../../../../app.component.scss';
+
+.menu-section-common{
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+}
+
+.menu-section-button{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    transition: 200ms;
+    border-radius: 0.25rem;
+}
+
+.menu-section-button>div{
+    padding-left: 0.5rem;
+}
+
+.menu-section-button-selected{
+    color: $falu-red;
+    border: 1px solid $falu-red
+}
+
+.menu-section-button:hover{
+    background-color: $shadow-text;
+}
+.menu-section-headline {
+    padding: 0.5rem;
+    color: $shadow-text;
+    font-size: 1.15rem;
+}
+
+.sec-cat>div {
+    padding-left: 0rem;
+}
+.sec-cat>svg {
+    color: lightgray;
+}

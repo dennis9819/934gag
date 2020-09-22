@@ -1,0 +1,103 @@
+@import '../../../../app.component.scss';
+
+:host {
+    width: 100%;
+}
+
+.item-body {
+    border: 1px solid #444;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    
+}
+
+.item-body>.header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.item-body>.media-content {
+    width: 100%;
+}
+
+.item-body>.info-bar {
+    padding-bottom: 0.75rem;
+}
+
+.item-body>.info-bar>.user {
+    color: $shadow-text;
+    display: inline;
+    transition: 200ms;
+    
+}
+
+.item-body>.info-bar>.text {
+    color: #bbb;
+    display: inline;
+}
+
+
+
+.item-body>.info-bar>.category {
+    color: #bbb;
+    display: inline;
+    transition: 200ms;
+}
+
+
+
+.item-body>.display-bar {
+    padding-top: 0.5rem;
+}
+
+.item-body>.display-bar>.likes {
+    color: $shadow-text;
+    display: inline;
+}
+
+.item-body>.display-bar>.seperator {
+    color: $shadow-text;
+    display: inline;
+}
+
+.item-body>.display-bar>.comments {
+    color: $shadow-text;
+    display: inline;
+}
+
+.interaction-bar {
+    padding-top: 0.25rem;
+}
+
+.interaction-button>svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.interaction-button {
+    border: 1px solid $shadow-text;
+    background-color: transparent;
+}
+
+.wait-body>svg {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 0.5;
+    stroke-dasharray: 20;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-name: circle--animation;
+}
+
+@keyframes circle--animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    
+    50% {
+      stroke-dashoffset: 64;
+    }
+  }
