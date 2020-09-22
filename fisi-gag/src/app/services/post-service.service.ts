@@ -15,8 +15,8 @@ export class PostServiceService {
     comments: 7823,
     categories: [
       {
-        categoryId: '1',
-        category: 'Memes'
+        categoryId: '2',
+        category: 'Informatiker'
       } as PostServiceModel.PostCategory
     ],
     mediaUrl: 'https://i.redd.it/osuoz99yeco51.jpg',
@@ -81,6 +81,10 @@ export class PostServiceService {
     const post = this.posts.filter(el => el.postId === id);
     if (post.length === 0){ throw new Error('Post not found!'); }
     post[0].points -= 1;
+  }
+
+  public getPostByCategory(id: string) {
+    return this.posts.filter(el => el.categories[0].categoryId === id);
   }
 }
 

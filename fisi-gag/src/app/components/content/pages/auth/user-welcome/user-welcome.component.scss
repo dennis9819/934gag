@@ -1,0 +1,63 @@
+@import '../../../../../app.component.scss';
+.container-form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //background-color: rgba($raisin-black,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container-box{
+    background-color: $raisin-black;
+    border: 1px solid #444;
+    border-radius: 0.25rem;
+    padding: 1rem;  
+    text-align: center;
+    font-family: Poppins;
+    z-index: 2;
+    width: 800px;
+}
+.container-box>h1{
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.container-box>button{
+    font-size: 1.05rem;
+}
+
+.container-box>div{
+    padding: 0;
+    margin: 1rem 0 1rem 0;
+
+}
+.container-box>.slogan{
+    font-weight: bold;
+    margin: 0 0 3rem 0;
+    font-size: 1.05rem;
+}
+
+.container-box .fisi-button-none{
+    margin-bottom: 1rem;;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.fisi-button {
+    min-width: 60%;
+}
+

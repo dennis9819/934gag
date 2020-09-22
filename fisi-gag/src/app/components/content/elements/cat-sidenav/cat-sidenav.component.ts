@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostServiceModel } from 'src/app/models/post-service.model';
+import { PostCategoryService } from 'src/app/services/post-category.service';
 
 @Component({
   selector: 'app-cat-sidenav',
@@ -8,24 +9,14 @@ import { PostServiceModel } from 'src/app/models/post-service.model';
 })
 export class CatSidenavComponent implements OnInit {
 
-  channels: PostServiceModel.PostCategory[] = [
-    {
-      categoryId: '1',
-      category: 'memes'
-    },
-    {
-      categoryId: '2',
-      category: 'informatiker'
-    },
-    {
-      categoryId: '3',
-      category: 'linux'
-    }
-  ];
+  channels: PostServiceModel.PostCategory[] = [];
 
-  constructor() { }
+  constructor(
+    private categoryService: PostCategoryService,
+  ) { }
 
   ngOnInit(): void {
+    this.channels = this.categoryService.getAllCategories();
   }
 
 }

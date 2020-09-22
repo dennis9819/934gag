@@ -1,0 +1,37 @@
+<div class="container-form" >
+    <div class="container-box">
+        <h1>Welcome to 9&#190;-GAG</h1>
+        <div class="slogan">{{sloganCurrent}}</div>
+        <div>Log into your 9&#190;-GAG Account</div>
+        
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+  
+            <div [className]="loginForm.controls.username.invalid && submitted ? 'input-error form-input' : 'form-input'" (click)="fel1.focus()">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+                <input #fel1 type="text" formControlName="username" type="text" placeholder="Username">
+            </div>
+            <div class="input-error-text" *ngIf="error=='User not found'">
+                Username invalid or user not found
+            </div>
+            <br><br>
+          
+            <div [className]="loginForm.controls.password.invalid && submitted ? 'input-error form-input' : 'form-input'"  (click)="fel2.focus()">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                  </svg>
+                <input #fel2 type="text" formControlName="password" type="password" placeholder="Password">
+            </div>
+            <div class="input-error-text" *ngIf="error=='Pasword incorrect'">
+                Invalid password
+            </div>
+            <br><br>
+            <button class="fisi-button fisi-button-outline" type="submit">Login</button>
+        </form>
+        
+        <div>No account? No problem. Create one for free in under a minute!</div>
+        <button class="fisi-button fisi-button-red" routerLink='/auth/register'>Register</button>
+    </div>
+    <div class="background" id="particles-js"></div>
+</div>

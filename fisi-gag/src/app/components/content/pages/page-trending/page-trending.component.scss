@@ -1,0 +1,56 @@
+@import '../../../../app.component.scss';
+
+.content-superbody{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.content-heading{
+    padding-left: 1rem;
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+    break-after: always; 
+    padding-top: 1rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+}
+
+.content-heading>div{
+    padding-left: 1rem;
+}
+
+.content-center{
+    overflow-x: hidden;
+    padding: 1rem;
+    max-width: 600px;
+    break-after: always; 
+}
+
+.content-more {
+    margin-top: -0.75rem;
+    padding-bottom: 1rem;
+}
+
+.content-sidenav-left{
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1250px) {
+    .content-sidenav-left{
+        position: absolute;
+        width: 300px;
+    }
+}
+
