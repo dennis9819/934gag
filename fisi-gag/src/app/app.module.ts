@@ -14,11 +14,10 @@ import { PagePopularComponent } from './components/content/pages/page-popular/pa
 import { PageTrendingComponent } from './components/content/pages/page-trending/page-trending.component';
 import { PageCategoryComponent } from './components/content/pages/page-category/page-category.component';
 import { PageCategoriesComponent } from './components/content/pages/page-categories/page-categories.component';
-import { UserLoginComponent } from './components/content/pages/auth/user-login/user-login.component';
-import { UserLogoutComponent } from './components/content/pages/auth/user-logout/user-logout.component';
-import { UserWelcomeComponent } from './components/content/pages/auth/user-welcome/user-welcome.component';
-import { UserRegisterComponent } from './components/content/pages/auth/user-register/user-register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BackgroundComponent } from './auth-module/components/background/background.component';
+import { AuthModule } from './auth-module/auth.module';
+import { UserRegisterNextComponent } from './auth-module/components/user-register-next/user-register-next.component';
 
 @NgModule({
   declarations: [
@@ -33,16 +32,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     PageTrendingComponent,
     PageCategoryComponent,
     PageCategoriesComponent,
-    UserLoginComponent,
-    UserLogoutComponent,
-    UserWelcomeComponent,
-    UserRegisterComponent
+    BackgroundComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

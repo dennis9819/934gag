@@ -1,0 +1,20 @@
+@import '../../../app.component.scss';
+@import '../../../input.style.scss';
+
+
+button{
+    font-size: 1.05rem;
+}
+
+div{
+    padding: 0;
+    //margin: 1rem 0 1rem 0;
+}
+
+.fisi-button-none{
+    margin-bottom: 1rem;;
+}
+
+.fisi-button {
+    min-width: 60%;
+}

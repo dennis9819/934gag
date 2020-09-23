@@ -1,0 +1,53 @@
+@import '../../../app.component.scss';
+@import '../../../input.style.scss';
+
+
+button{
+    font-size: 1.05rem;
+}
+
+div{
+    padding: 0;
+    //margin: 1rem 0 1rem 0;
+}
+
+.fisi-button-none{
+    margin-bottom: 1rem;;
+}
+
+.fisi-button {
+    min-width: 60%;
+}
+
+.pw-check-list {
+    display: inline-block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.pw-check-msg {
+    float: left; 
+    clear: left;
+    color: $success-green;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.pw-check-msg>svg {
+    margin-right: 0.5rem;
+}
+
+.pw-check-msg-fail>svg {
+    margin-right: 0.5rem;
+}
+
+.pw-check-msg-fail {
+    float: left; 
+    clear: left;
+    color: $warning-red;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+}

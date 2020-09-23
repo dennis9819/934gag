@@ -1,0 +1,81 @@
+<div>Create your new 9&#190;-GAG Account</div>
+
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <!--uername-->
+    <div [className]="registerForm.controls.username.invalid && submitted || registerForm.controls.username.hasError('used') ? 'input-error form-input' : 'form-input'" (click)="fel1.focus()">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+        <input #fel1 type="text" formControlName="username" type="text" placeholder="Username" (change)="changeName()">
+    </div>
+    <div class="input-error-text" *ngIf="registerForm.controls.username.hasError('used')">
+        Username is already used<br>
+    </div>
+    <br><br>
+    <div [className]="registerForm.controls.mail.invalid && submitted || registerForm.controls.mail.hasError('used') ? 'input-error form-input' : 'form-input'" (click)="fel2.focus()">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+        </svg>
+        <input #fel2 type="text" formControlName="mail" type="text" placeholder="Mail" (change)="changeMail()">
+    </div>
+    <div class="input-error-text" *ngIf="registerForm.controls.mail.hasError('used')">
+        Mailaddress is already used<br>
+    </div>
+    <br><br>
+    
+    <div [className]="registerForm.controls.password1.invalid && submitted ? 'input-error form-input' : 'form-input'"  (click)="fel3.focus()">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg>
+        <input #fel3 type="text" formControlName="password1" type="password" placeholder="Password">
+    </div>
+    <div class="input-error-text" *ngIf="error=='Pasword incorrect'">
+        Pasword does not need requirements.
+    </div><br>
+    <div class="pw-check-list">
+        <label [ngClass]="registerForm.controls['password1'].hasError('minlength') || registerForm.controls['password1'].value == '' ? 'pw-check-msg-fail' : 'pw-check-msg'">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path *ngIf="!registerForm.controls['password1'].hasError('minlength')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                <path *ngIf="registerForm.controls['password1'].hasError('minlength')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+            </svg>
+            Must be at least 8 characters!
+        </label><br>
+        <label [ngClass]="registerForm.controls['password1'].hasError('hasCapitalCase') || registerForm.controls['password1'].value == '' ? 'pw-check-msg-fail' : 'pw-check-msg'">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path *ngIf="!registerForm.controls['password1'].hasError('hasCapitalCase')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                <path *ngIf="registerForm.controls['password1'].hasError('hasCapitalCase')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+            </svg>
+            Must contain at least 1 in Capital Case!
+        </label><br>
+        <label [ngClass]="registerForm.controls['password1'].hasError('hasSmallCase') || registerForm.controls['password1'].value == '' ? 'pw-check-msg-fail' : 'pw-check-msg'">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path *ngIf="!registerForm.controls['password1'].hasError('hasSmallCase')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                <path *ngIf="registerForm.controls['password1'].hasError('hasSmallCase')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+            </svg>
+            Must contain at least 1 Letter in Small Case!
+        </label><br>
+        <label [ngClass]="registerForm.controls['password1'].hasError('hasNumber') || registerForm.controls['password1'].value == '' ? 'pw-check-msg-fail' : 'pw-check-msg'">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path *ngIf="!registerForm.controls['password1'].hasError('hasNumber')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                <path *ngIf="registerForm.controls['password1'].hasError('hasNumber')" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+            </svg>
+            Must contain at least 1 number!
+        </label><br>
+    </div>
+
+    <div [className]="registerForm.controls.password2.invalid && submitted ? 'input-error form-input' : 'form-input'"  (click)="fel4.focus()">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+        <input #fel4 type="text" formControlName="password2" type="password" placeholder="Repeat Password">
+    </div>
+    <div class="input-error-text" *ngIf="registerForm.controls['password2'].hasError('NoPassswordMatch')">
+        Paswords do not match.
+    </div>
+    <br><br>
+
+    <button class="fisi-button fisi-button-outline" type="submit">Register</button>
+</form>
+
+<div>Already have an account? No problem. Log in now!</div>
+<button class="fisi-button fisi-button-red" routerLink='/auth/login'>Login</button>
