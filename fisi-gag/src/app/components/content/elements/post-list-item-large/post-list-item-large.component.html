@@ -8,7 +8,8 @@
         <div class="text"> · {{dateString}} ago</div>
     </div>
     <div class="media-content">
-        <img src="{{_data.mediaUrl}}" width="100%">
+        <div *ngIf="_data.contentType == 'text'" class="text-content">{{_data.content}}</div>
+        <img *ngIf="_data.contentType == 'picture'" src="{{_data.mediaUrl}}" width="100%">
     </div>
     <div class="display-bar">
         <div class="likes item-link" routerLink='/post/{{_data.postId}}'>

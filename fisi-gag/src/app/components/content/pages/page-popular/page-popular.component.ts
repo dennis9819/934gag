@@ -36,7 +36,8 @@ export class PagePopularComponent implements OnInit {
         } as PostServiceModel.PostCategory
       ],
       mediaUrl: 'https://i.redd.it/iu0nx7j8tfo51.png',
-      postDate: new Date('2020-06-01T11:10:43+00:00')
+      postDate: new Date('2020-06-01T11:10:43+00:00'),
+      contentType: 'picture'
     });
   }
 }

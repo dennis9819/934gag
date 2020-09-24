@@ -1,7 +1,9 @@
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 
+
 // tslint:disable-next-line: no-namespace
 export namespace PostServiceModel {
+    export type PostContentType = 'text' | 'video' | 'picture';
     export interface PostEntity {
         postId: string;
         userId: string;
@@ -10,7 +12,9 @@ export namespace PostServiceModel {
         points: number;
         comments: number;
         title: string;
-        mediaUrl: string;
+        mediaUrl?: string;
+        content?: any;
+        contentType: PostContentType;
         categories: PostCategory[];
     }
 
