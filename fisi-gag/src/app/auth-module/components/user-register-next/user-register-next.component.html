@@ -2,10 +2,10 @@
 <div>Just one more step</div>
 <h2>You need to confirm your account</h2>
 <div>
-    An email should have been sent to your adress at {{mailadress}}<br>
+    An email should have been sent to your Mail-Inbox<br>
     Please activate your account with the link provided in this mail.<br><br>
     The activation link will be vaild for 48 hours.
 </div>
-<button class="fisi-button fisi-button-outline" >Resend confirmation mail</button>
+<button class="fisi-button fisi-button-outline" (click)="resend()">Resend confirmation mail</button>
 <div>Already activated your account? Log in now!</div>
 <button class="fisi-button fisi-button-red" routerLink="/auth/login">Login</button>

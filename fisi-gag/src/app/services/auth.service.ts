@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
 
 
 export interface MyUserAccount {
@@ -20,7 +21,9 @@ export class AuthService {
       userMail: 'mail@dennisgunia.de',
     }
   ];
-  constructor() { }
+  constructor(
+    private api: ApiService
+  ) { }
 
   login(username: string, password: string){
     return new Promise<void>((resolve, reject) => {
@@ -49,34 +52,57 @@ export class AuthService {
 
   checkUserName(username: string){
     return new Promise<void>((resolve, reject) => {
-      const user = this.dummyUsers.filter(el => el.userAccount === username);
-      if (user.length === 0){ resolve(); return; }
-      reject('Username used');
+      this.api.apiPost('/auth/user/testName', {user: username}).then( data => {
+        // tslint:disable-next-line: no-string-literal
+        if (data['data'].used){
+          reject('username used');
+        }else{
+          resolve();
+        }
+      });
     });
   }
 
-  checkMail(mail: string){
+  checkMail(mailin: string){
     return new Promise<void>((resolve, reject) => {
-      const user = this.dummyUsers.filter(el => el.userMail === mail);
-      if (user.length === 0){ resolve(); return; }
-      reject('Mailadress used');
+      this.api.apiPost('/auth/user/testMail', {mail: mailin}).then( data => {
+        // tslint:disable-next-line: no-string-literal
+        if (data['data'].used){
+          reject('Mailadress used');
+        }else{
+          resolve();
+        }
+      });
     });
   }
 
   registerUser(username: string, mail: string, password: string){
     return new Promise<void>((resolve, reject) => {
-      const user = this.dummyUsers.filter(el => el.userAccount === username || el.userMail === mail);
-      if (user.length === 0){
-        this.dummyUsers.push({
-          userId: (Math.random() * 2000).toString(),
-          userAccount: username,
-          userPassword: password,
-          userMail: mail,
-        });
+      this.api.apiPost('/auth/user/register', {
+        nick: username,
+        mail,
+        passwd: password,
+        name_first: '',
+        name_last: ''
+      }).then((res) => {
+        // tslint:disable-next-line: no-string-literal
+        resolve(res['data']);
+      }).catch((err) => {
+        console.error(err);
+        reject();
+      });
+    });
+  }
+
+  resendVerificationMail(t: string){
+    return new Promise<void>((resolve, reject) => {
+      this.api.apiPost('/auth/user/resendToken', {t}).then((res) => {
+        // tslint:disable-next-line: no-string-literal
         resolve();
-      }else{
-        reject('User or Mail already exist');
-      }
+      }).catch((err) => {
+        console.error(err);
+        reject();
+      });
     });
   }
 }

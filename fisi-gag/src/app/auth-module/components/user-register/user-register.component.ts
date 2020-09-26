@@ -41,11 +41,13 @@ export class UserRegisterComponent implements OnInit {
     if (!this.registerForm.valid){return; }
     this.authService.registerUser(this.registerForm.value.username, this.registerForm.value.mail, this.registerForm.value.password1)
       .then(res => {
-        this.router.navigate(['/auth/register/next', { }]);
+        this.router.navigate(['/auth/register/next', { t: res['uid']}]);
       }).catch(err => {
         this.error = err;
-        if (err === 'User or Mail already exist'){
+        if (err === 'Nickname already taken'){
           this.changeName();
+        }
+        if (err === 'Email already taken'){
           this.changeMail();
         }
       });

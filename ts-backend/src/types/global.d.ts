@@ -1,5 +1,9 @@
-import * as rfs from 'rotating-file-stream'
+import { PropertyService } from "../services/PropertyService";
 
-export interface Global {
-    ls: rfs.RotatingFileStream;
-}
+declare global {
+    namespace NodeJS {
+      interface Global {
+          cnf: PropertyService
+      }
+    }
+  }

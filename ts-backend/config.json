@@ -1,0 +1,19 @@
+{
+    "auth": {
+        "salt":"1234",
+        "activateTokenTimout": 5, 
+        "sessionTimeout": 1440,
+        "sessionKeep": false,
+        "auditRetentionPolicy": {
+            "L0": 7,
+            "L1": 30,
+            "L2": 90,
+            "L3": 365
+        }
+    },
+    "modeDebug": true,
+    "host": {
+        "fqdn": "127.0.0.1:3000",
+        "proto": "http"
+    }
+}
