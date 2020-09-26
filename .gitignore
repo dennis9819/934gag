@@ -8,6 +8,8 @@
 /ts-backend/dist
 /ts-backend/log
 
+/ts-backend/ormconfig.json
+
 # dependencies
 /fisi-gag/node_modules
 /ts-backend/node_modules

@@ -18,6 +18,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BackgroundComponent } from './auth-module/components/background/background.component';
 import { AuthModule } from './auth-module/auth.module';
 import { UserRegisterNextComponent } from './auth-module/components/user-register-next/user-register-next.component';
+import { HttpClientModule , HttpClientJsonpModule} from '@angular/common/http';
+import { AlertComponent } from './gagcomponents/alert/alert.component';
+import { AlertItemComponent } from './gagcomponents/alert-item/alert-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,8 @@ import { UserRegisterNextComponent } from './auth-module/components/user-registe
     PageCategoryComponent,
     PageCategoriesComponent,
     BackgroundComponent,
+    AlertComponent,
+    AlertItemComponent,
 
   ],
   imports: [
@@ -40,7 +46,10 @@ import { UserRegisterNextComponent } from './auth-module/components/user-registe
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

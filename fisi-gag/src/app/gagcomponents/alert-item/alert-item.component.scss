@@ -1,0 +1,18 @@
+@import '../../app.component.scss';
+
+.alertitem {
+    border-radius: 0.25rem;
+    padding: 1rem;
+    max-width: 500px;
+    margin-bottom: 0.5rem;
+}
+
+.red {
+    border: 1px solid darken( $warning-red, 30%);
+    background-color: $warning-red;
+}
+
+.green {
+    border: 1px solid darken( $success-green, 10%);
+    background-color: $success-green;
+}

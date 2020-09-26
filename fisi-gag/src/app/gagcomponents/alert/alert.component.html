@@ -1,0 +1,3 @@
+<div class="alertlist" [@listAnimation]="alertService.alerts.length">
+    <app-alert-item *ngFor="let alert of alertService.alerts;" [data]="alert"></app-alert-item>
+</div>
